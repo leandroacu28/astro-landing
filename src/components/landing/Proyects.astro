@@ -1,0 +1,26 @@
+---
+import {projects} from "../../config/proyects.json";
+console.log(projects)
+
+---
+
+<h2 class="font-bold text-5xl my-5">Proyects</h2>
+
+<!-- por todos los proyectos voy a recorrer  un unico proyecto  -->
+{
+projects.map(project=>(
+<div class="md:flex text-center md:text-left pb-8">
+    <div class="md:flex-1 p-4">
+        <h2 class="font-bold text-2xl my-4">{project.title}</h2>
+        <p class="my-2">{project.description}</p>
+        <button class="bg-indigo-500 px-3 py-2 hover:bg-indigo-400 rounded-xl gap-y-3">
+            More Info
+        </button>
+    </div>
+
+    <div class="md:flex-1 p-4">
+        <img class="w-72 mx-auto" src={project.image} alt="">
+    </div>
+</div>
+))
+}
